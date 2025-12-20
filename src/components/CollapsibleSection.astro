@@ -8,7 +8,7 @@ interface Props {
 const { title, id } = Astro.props;
 ---
 
-<div class="collapsible-wrapper" data-section={id}>
+<div class="collapsible-wrapper" data-section={id} id={id}>
   <button class="collapsible-header" aria-expanded="false" aria-controls={`content-${id}`}>
     <h2 class="collapsible-title">{title}</h2>
     <span class="expand-icon" aria-hidden="true">+</span>
@@ -39,6 +39,7 @@ const { title, id } = Astro.props;
     cursor: pointer;
     transition: background-color 0.2s ease;
     text-align: left;
+    font-family: inherit;
   }
 
   .collapsible-header:hover {
@@ -54,6 +55,8 @@ const { title, id } = Astro.props;
     font-size: 1.5rem;
     font-weight: 400;
     color: #111;
+    font-family: inherit;
+    letter-spacing: normal;
   }
 
   .expand-icon {
