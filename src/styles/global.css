@@ -150,8 +150,8 @@ article .marginnote {
 
 .hero {
   text-align: center;
-  padding: 4rem 0 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem 0 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -160,7 +160,7 @@ article .marginnote {
 .wedding-celebration {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 4rem;
+  margin: 3rem auto 4rem;
   padding: 0 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -345,12 +345,21 @@ article .marginnote {
     padding-left: 1.5rem;
   }
 
+  .hero {
+    padding: 1.5rem 0 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .wedding-celebration {
+    margin: 2rem auto 3rem;
   }
 
   .timeline-title {
