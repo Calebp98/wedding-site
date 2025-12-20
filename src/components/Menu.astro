@@ -1,0 +1,187 @@
+---
+// Menu & Food Details Component
+---
+
+<div class="menu-section">
+  <h2 class="section-title">Menu</h2>
+  <p class="section-subtitle">A culinary celebration</p>
+
+  <div class="menu-category">
+    <h3>Cocktail Hour</h3>
+    <ul>
+      <li>Assorted hors d'oeuvres</li>
+      <li>Seasonal cheese and charcuterie board</li>
+      <li>Fresh vegetable crudités with hummus</li>
+      <li>Signature cocktails and wine selection</li>
+    </ul>
+  </div>
+
+  <div class="menu-category">
+    <h3>Dinner Service</h3>
+    <p class="menu-note">Guests will select their entrée upon RSVP</p>
+
+    <div class="menu-option">
+      <h4>Entrée Option 1</h4>
+      <p>Pan-seared salmon with lemon butter, roasted vegetables, and wild rice pilaf</p>
+    </div>
+
+    <div class="menu-option">
+      <h4>Entrée Option 2</h4>
+      <p>Herb-crusted chicken breast with garlic mashed potatoes and seasonal greens</p>
+    </div>
+
+    <div class="menu-option">
+      <h4>Vegetarian Option</h4>
+      <p>Butternut squash risotto with roasted mushrooms and parmesan</p>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <h3>Dessert</h3>
+    <ul>
+      <li>Wedding cake</li>
+      <li>Assorted mini desserts</li>
+      <li>Coffee and tea service</li>
+    </ul>
+  </div>
+
+  <div class="dietary-note">
+    <p>
+      <strong>Dietary Restrictions:</strong> Please let us know about any dietary
+      restrictions or allergies when you RSVP. We'll work with our caterer to
+      accommodate your needs.
+    </p>
+  </div>
+</div>
+
+<style>
+  .menu-section {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    border: 2px solid #111;
+    background-color: #fffff8;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .menu-category {
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-category:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .menu-category h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    color: #111;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+  }
+
+  .menu-category ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: none;
+  }
+
+  .menu-category ul li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .menu-category ul li::before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+    color: #999;
+  }
+
+  .menu-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .menu-option {
+    margin-bottom: 1.5rem;
+  }
+
+  .menu-option h4 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin: 0 0 0.4rem 0;
+    color: #111;
+  }
+
+  .menu-option p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .dietary-note {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+  }
+
+  .dietary-note p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .dietary-note strong {
+    color: #111;
+  }
+
+  @media (max-width: 768px) {
+    .menu-section {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .menu-category h3 {
+      font-size: 1.2rem;
+    }
+
+    .menu-option h4 {
+      font-size: 1rem;
+    }
+
+    .menu-category ul li,
+    .menu-option p {
+      font-size: 0.9rem;
+    }
+  }
+</style>

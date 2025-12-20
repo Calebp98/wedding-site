@@ -1,0 +1,232 @@
+---
+// Accommodations Details Component
+---
+
+<div class="accommodations-section">
+  <h2 class="section-title">Accommodations</h2>
+  <p class="section-subtitle">Where to stay</p>
+
+  <div class="hotel-block">
+    <h3>The Grand Hotel</h3>
+    <div class="hotel-details">
+      <p class="hotel-address">123 Main Street, City, State 12345</p>
+      <p class="hotel-phone">(555) 123-4567</p>
+      <p class="hotel-distance">2 miles from venue</p>
+    </div>
+    <div class="hotel-booking">
+      <p>
+        <strong>Room Block:</strong> Book by August 12, 2026 for our special
+        rate
+      </p>
+      <p class="discount-code">Use code: <span>WEDDING2026</span></p>
+      <p class="room-rate">$159/night + tax</p>
+    </div>
+    <a
+      href="https://www.example.com/book"
+      class="booking-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Book Your Room →
+    </a>
+  </div>
+
+  <div class="hotel-block">
+    <h3>Cozy Inn & Suites</h3>
+    <div class="hotel-details">
+      <p class="hotel-address">456 Oak Avenue, City, State 12345</p>
+      <p class="hotel-phone">(555) 234-5678</p>
+      <p class="hotel-distance">3 miles from venue</p>
+    </div>
+    <div class="hotel-booking">
+      <p>
+        <strong>Room Block:</strong> Book by August 12, 2026 for our special
+        rate
+      </p>
+      <p class="discount-code">Use code: <span>WEDDING2026</span></p>
+      <p class="room-rate">$129/night + tax</p>
+    </div>
+    <a
+      href="https://www.example.com/book"
+      class="booking-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Book Your Room →
+    </a>
+  </div>
+
+  <div class="additional-info">
+    <h3>Other Options</h3>
+    <p>
+      The area also offers many Airbnb and vacation rental options. We
+      recommend booking early as September is a popular time to visit!
+    </p>
+    <p>
+      <strong>Complimentary shuttle service</strong> will be provided from both
+      hotels to the venue and back.
+    </p>
+  </div>
+</div>
+
+<style>
+  .accommodations-section {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    border: 2px solid #111;
+    background-color: #fffff8;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .hotel-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .hotel-block:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .hotel-block h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    color: #111;
+  }
+
+  .hotel-details {
+    margin-bottom: 1.5rem;
+  }
+
+  .hotel-details p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .hotel-address {
+    font-weight: 400;
+  }
+
+  .hotel-phone {
+    font-variant: tabular-nums;
+  }
+
+  .hotel-distance {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .hotel-booking {
+    margin: 1.5rem 0;
+  }
+
+  .hotel-booking p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  .discount-code {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .discount-code span {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #ddd;
+    font-weight: 400;
+    color: #111;
+  }
+
+  .room-rate {
+    font-weight: 400;
+    color: #111;
+  }
+
+  .booking-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #111;
+    color: #fffff8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: background-color 0.2s ease;
+  }
+
+  .booking-link:hover {
+    background-color: #333;
+  }
+
+  .additional-info {
+    margin-top: 2rem;
+  }
+
+  .additional-info h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    color: #111;
+  }
+
+  .additional-info p {
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .additional-info strong {
+    color: #111;
+  }
+
+  @media (max-width: 768px) {
+    .accommodations-section {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .hotel-block h3 {
+      font-size: 1.2rem;
+    }
+
+    .hotel-details p,
+    .hotel-booking p,
+    .additional-info p {
+      font-size: 0.9rem;
+    }
+
+    .booking-link {
+      display: block;
+      text-align: center;
+      padding: 0.6rem 1rem;
+    }
+  }
+</style>

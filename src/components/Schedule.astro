@@ -1,0 +1,157 @@
+---
+// Schedule of Events Component
+---
+
+<div class="schedule-section">
+  <h2 class="section-title">Schedule of Events</h2>
+  <p class="section-subtitle">September 12, 2026</p>
+
+  <div class="schedule-timeline">
+    <div class="schedule-item">
+      <div class="schedule-time">3:00 PM</div>
+      <div class="schedule-details">
+        <h3>Ceremony</h3>
+        <p>Please arrive by 2:45 PM to be seated</p>
+      </div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">4:00 PM</div>
+      <div class="schedule-details">
+        <h3>Cocktail Hour</h3>
+        <p>Light refreshments and drinks on the terrace</p>
+      </div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">5:30 PM</div>
+      <div class="schedule-details">
+        <h3>Reception & Dinner</h3>
+        <p>Dinner service begins, followed by toasts</p>
+      </div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">7:00 PM</div>
+      <div class="schedule-details">
+        <h3>First Dance</h3>
+        <p>Let the celebration begin!</p>
+      </div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">7:15 PM</div>
+      <div class="schedule-details">
+        <h3>Dancing & Celebration</h3>
+        <p>Dance the night away</p>
+      </div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">10:00 PM</div>
+      <div class="schedule-details">
+        <h3>Last Dance</h3>
+        <p>Send-off under the stars</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .schedule-section {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    border: 2px solid #111;
+    background-color: #fffff8;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .schedule-timeline {
+    position: relative;
+  }
+
+  .schedule-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .schedule-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .schedule-time {
+    flex-shrink: 0;
+    width: 100px;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    color: #111;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-top: 0.2rem;
+  }
+
+  .schedule-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #111;
+  }
+
+  .schedule-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .schedule-section {
+      padding: 2rem 1.5rem;
+      margin: 0 1rem 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .schedule-item {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .schedule-time {
+      width: auto;
+      font-size: 0.85rem;
+    }
+
+    .schedule-details h3 {
+      font-size: 1.1rem;
+    }
+
+    .schedule-details p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
