@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TimelineSection from "../components/TimelineSection.astro";
 import DaysCounter from "../components/DaysCounter.astro";
 import WeddingInfo from "../components/WeddingInfo.astro";
+import CollapsibleSection from "../components/CollapsibleSection.astro";
 import Schedule from "../components/Schedule.astro";
 import Menu from "../components/Menu.astro";
 import Accommodations from "../components/Accommodations.astro";
@@ -34,10 +35,21 @@ import "../styles/global.css";
     <DaysCounter />
   </div>
 
-  <Schedule />
-  <Menu />
-  <Accommodations />
-  <Contact />
+  <CollapsibleSection title="Schedule of Events" id="schedule">
+    <Schedule />
+  </CollapsibleSection>
+
+  <CollapsibleSection title="Menu" id="menu">
+    <Menu />
+  </CollapsibleSection>
+
+  <CollapsibleSection title="Accommodations" id="accommodations">
+    <Accommodations />
+  </CollapsibleSection>
+
+  <CollapsibleSection title="Questions?" id="contact">
+    <Contact />
+  </CollapsibleSection>
 
   <article>
     <TimelineSection
