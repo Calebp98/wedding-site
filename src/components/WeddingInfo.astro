@@ -1,0 +1,92 @@
+---
+// Wedding Info Component
+---
+
+<div class="wedding-info">
+  <div class="info-item date">
+    <div class="info-label">Date</div>
+    <div class="info-value">September 12, 2026</div>
+  </div>
+
+  <div class="info-item time">
+    <div class="info-label">Time</div>
+    <div class="info-value">3:00 PM</div>
+  </div>
+
+  <div class="info-item location">
+    <div class="info-label">Location</div>
+    <div class="info-value">Venue Name</div>
+    <div class="info-detail">123 Beautiful Street, City, State 12345</div>
+  </div>
+
+  <div class="info-item dress-code">
+    <div class="info-label">Dress Code</div>
+    <div class="info-value">Formal Attire</div>
+  </div>
+
+  <div class="info-item rsvp">
+    <div class="info-label">RSVP By</div>
+    <div class="info-value">May 1, 2026</div>
+  </div>
+</div>
+
+<style>
+  .wedding-info {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    border: 2px solid #111;
+    background-color: #fffff8;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .info-item {
+    margin: 2rem 0;
+    padding: 0.5rem 0;
+  }
+
+  .info-item:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .info-label {
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    color: #555;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-value {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #111;
+  }
+
+  .info-detail {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 760px) {
+    .wedding-info {
+      margin: 0 1rem 3rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .info-item {
+      margin: 1.5rem 0;
+    }
+
+    .info-value {
+      font-size: 1.2rem;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+    }
+  }
+</style>

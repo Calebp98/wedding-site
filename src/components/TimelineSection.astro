@@ -1,0 +1,16 @@
+---
+interface Props {
+  eventDate: string;
+  eventName: string;
+  displayDate: string;
+  title: string;
+}
+
+const { eventDate, eventName, displayDate, title } = Astro.props;
+---
+
+<section class="timeline-section" data-event-date={eventDate} data-event-name={eventName}>
+  <div class="timeline-date">{displayDate}</div>
+  <h2 class="timeline-title">{title}</h2>
+  <slot />
+</section>

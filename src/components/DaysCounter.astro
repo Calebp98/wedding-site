@@ -1,0 +1,177 @@
+---
+// Days Counter Component
+---
+
+<div class="days-counter">
+  <span class="number" id="days-count">0</span>
+  <div class="label">Days Until</div>
+  <div class="label">The Wedding</div>
+  <div class="sublabel" id="event-name"></div>
+</div>
+
+<script>
+  // Get wedding date from first section (update this to your actual wedding date)
+  const weddingDateStr = document.querySelector('[data-event-date]')?.getAttribute('data-event-date');
+  const weddingDate = new Date(weddingDateStr || '2026-09-12');
+
+  // Elements
+  const daysCountElement = document.getElementById('days-count');
+  const eventNameElement = document.getElementById('event-name');
+
+  // Track current value and animation state
+  let currentValue = 0;
+  let targetValue = 0;
+  let currentTimer: ReturnType<typeof setInterval> | null = null;
+  let inTimelineMode = false;
+
+  // Calculate days between two dates
+  function calculateDays(date1: Date, date2: Date): number {
+    const oneDay = 24 * 60 * 60 * 1000;
+    return Math.round(Math.abs((date2.getTime() - date1.getTime()) / oneDay));
+  }
+
+  // Show days until wedding from today
+  function showDaysUntilWedding() {
+    if (!daysCountElement || !eventNameElement) return;
+
+    const today = new Date();
+    const days = calculateDays(today, weddingDate);
+
+    if (days !== targetValue) {
+      animateNumber(days);
+    }
+    eventNameElement.textContent = '';
+    inTimelineMode = false;
+
+    // Remove timeline mode styling
+    const counterElement = document.querySelector('.days-counter');
+    if (counterElement) {
+      counterElement.classList.remove('timeline-mode');
+    }
+
+    // Remove focused class from all sections when not in timeline mode
+    document.querySelectorAll('.timeline-section').forEach(s => {
+      s.classList.remove('focused');
+    });
+  }
+
+  // Update counter for a given section
+  function updateCounter(section: Element) {
+    const eventDateStr = section.getAttribute('data-event-date');
+    const eventName = section.getAttribute('data-event-name');
+
+    if (eventDateStr && daysCountElement && eventNameElement) {
+      const eventDate = new Date(eventDateStr);
+      const days = calculateDays(eventDate, weddingDate);
+
+      // Only animate if the value is actually changing
+      if (days !== targetValue) {
+        animateNumber(days);
+      }
+
+      // Update event name
+      if (eventName !== 'The Wedding') {
+        eventNameElement.textContent = `from ${eventName}`;
+      } else {
+        eventNameElement.textContent = '';
+      }
+      inTimelineMode = true;
+
+      // Add timeline mode styling
+      const counterElement = document.querySelector('.days-counter');
+      if (counterElement) {
+        counterElement.classList.add('timeline-mode');
+      }
+
+      // Remove focused class from all sections
+      document.querySelectorAll('.timeline-section').forEach(s => {
+        s.classList.remove('focused');
+      });
+
+      // Add focused class to current section
+      section.classList.add('focused');
+    }
+  }
+
+  // Animate number counting
+  function animateNumber(end: number) {
+    if (!daysCountElement) return;
+
+    // Cancel any running animation
+    if (currentTimer) {
+      clearInterval(currentTimer);
+      currentTimer = null;
+    }
+
+    // Update target
+    targetValue = end;
+
+    const duration = 600;
+    const steps = 30;
+    const start = currentValue;
+    const stepValue = (end - start) / steps;
+    const stepDuration = duration / steps;
+    let step = 0;
+
+    currentTimer = setInterval(() => {
+      step++;
+      currentValue += stepValue;
+
+      if (step >= steps) {
+        currentValue = end;
+        daysCountElement.textContent = end.toLocaleString();
+        if (currentTimer) {
+          clearInterval(currentTimer);
+          currentTimer = null;
+        }
+      } else {
+        daysCountElement.textContent = Math.round(currentValue).toLocaleString();
+      }
+    }, stepDuration);
+  }
+
+  // Intersection Observer for counter updates
+  const observerOptions: IntersectionObserverInit = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -200px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.target.classList.contains('timeline-section')) {
+        updateCounter(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all timeline sections
+  document.querySelectorAll('.timeline-section').forEach(element => {
+    observer.observe(element);
+  });
+
+  // Check if we should show days until wedding based on scroll position
+  function checkScrollPosition() {
+    const allTimelineSections = document.querySelectorAll('.timeline-section');
+    let anyInView = false;
+
+    allTimelineSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      // Check if section is in the viewport zone where counter updates
+      if (rect.top < window.innerHeight - 200 && rect.bottom > 200) {
+        anyInView = true;
+      }
+    });
+
+    if (!anyInView) {
+      // No timeline sections in view - show days until wedding
+      showDaysUntilWedding();
+    }
+  }
+
+  // Listen to scroll events to detect when we're back at top
+  window.addEventListener('scroll', checkScrollPosition);
+
+  // Initialize with days until wedding
+  showDaysUntilWedding();
+  checkScrollPosition();
+</script>
