@@ -143,13 +143,6 @@ import "../styles/global.css";
         >
       </p>
     </TimelineSection>
-
-    <div class="divider">
-      <p>✦ ✦ ✦</p>
-      <p style="font-style: italic; margin-top: 2rem;">
-        Every love story is beautiful, but ours is our favorite.
-      </p>
-    </div>
   </article>
 </Layout>
 
@@ -168,9 +161,9 @@ import "../styles/global.css";
     });
   }, observerOptions);
 
-  // Observe all timeline sections and divider
+  // Observe all timeline sections
   document
-    .querySelectorAll(".timeline-section, .divider")
+    .querySelectorAll(".timeline-section")
     .forEach((element) => {
       observer.observe(element);
     });
