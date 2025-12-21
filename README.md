@@ -1,62 +1,52 @@
-# Wedding Timeline Website
+# Wedding Website
 
-A beautiful, minimalist wedding website with an animated timeline and dynamic days counter.
-
-## Project Structure
-
-```text
-/
-├── public/              # Static assets (images, fonts, etc.)
-├── src/
-│   ├── components/
-│   │   ├── DaysCounter.astro      # Sticky counter showing days to wedding
-│   │   └── TimelineSection.astro  # Reusable timeline section component
-│   ├── layouts/
-│   │   └── Layout.astro           # Base HTML layout
-│   ├── pages/
-│   │   └── index.astro            # Main timeline page
-│   └── styles/
-│       └── global.css             # Custom styles for timeline and counter
-└── package.json
-```
+Minimalist wedding site with generative tree art background and animated timeline.
 
 ## Features
 
-- **Scroll-triggered animations** - Timeline sections fade in as you scroll
-- **Dynamic days counter** - Updates to show days from each event to the wedding
-- **Tufte CSS styling** - Elegant, minimalist typography
-- **Mobile responsive** - Looks great on all devices
-- **Lightweight** - Fast loading, minimal JavaScript
+- **Generative tree art** - Interactive p5.js background with tree, sun, and grass
+- **Scroll effects** - Tree grows/shrinks as you scroll, sun shimmers
+- **Pastel colors** - Burnt orange sun, dark green grass, brown tree
+- **Timeline** - Tell your love story with scroll-triggered animations
+- **Days counter** - Sticky counter showing days to/from the wedding
+- **Mobile responsive** - Works on all devices
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+Visit `localhost:4321` to see your site.
 
 ## Customization
 
-### Update Your Dates and Stories
+### Wedding Details
+Edit `src/pages/index.astro`:
+- Change wedding date in the celebration section
+- Update timeline dates and stories
+- Modify wedding info (time, location, dress code)
 
-Edit `src/pages/index.astro` to customize:
-- Wedding date (eventDate in first TimelineSection)
-- Each timeline section's date, title, and content
-- Add or remove timeline sections as needed
-
-### Add Photos
-
-Place images in the `public/` folder and reference them in your content:
-```html
-<img src="/photo.jpg" alt="Description" />
+### Colors
+Edit `src/components/TreeBackground.astro`:
+```javascript
+const treeColor = "#A67C52";    // Tree
+const grassColor = "#7A9B76";   // Grass
+const sunColor = "#D8885F";     // Sun
 ```
 
-## 🧞 Commands
+### Content
+- `src/components/WeddingInfo.astro` - Date, time, location details
+- `src/components/Schedule.astro` - Event schedule
+- `src/components/Menu.astro` - Meal options
+- `src/components/Accommodations.astro` - Hotel info
 
-All commands are run from the root of the project, from a terminal:
+## Deployment
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm run build
+npm run preview
+```
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Deploy the `dist/` folder to any static host (Netlify, Vercel, GitHub Pages, etc.).
