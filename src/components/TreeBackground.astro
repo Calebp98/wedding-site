@@ -123,6 +123,11 @@
   function drawSun(p: any) {
     p.push();
 
+    // Use scroll percentage to vary random seed for shimmer effect
+    // This makes different rays appear in different positions but keeps total count constant
+    const shimmerSeed = Math.floor(currentScrollPercentage * 100) + 42;
+    p.randomSeed(shimmerSeed);
+
     // Sun setup - from original
     const sunBeamWidth = p.random(0.15, 0.45);
     const sunX = p.width * 0.15;
@@ -131,18 +136,12 @@
 
     const sunFirstPart = p.random(75, 100);
 
-    // Calculate shimmer - randomly hide 1/3 of rays based on scroll
-    const shimmerThreshold = currentScrollPercentage / 3; // 0 to ~0.33
-
     // First part of the sun - outer rays
     p.fill(0, 0, 0, 0);
     p.stroke(sunColor);
     p.strokeWeight(sunBeamWidth / 3);
     let numLines1 = p.random(350, 450);
     for (let i = 0; i < numLines1; i++) {
-      // Skip random rays based on scroll for shimmer effect
-      if (p.random() < shimmerThreshold) continue;
-
       let angle = (i * p.TWO_PI) / numLines1;
       let offsetEnd = p.random(25, 45);
       let x = (sunFirstPart + offsetEnd) * p.cos(angle);
@@ -159,9 +158,6 @@
     p.strokeWeight(sunBeamWidth / 2);
     let numLines2 = p.random(350, 450);
     for (let i = 0; i < numLines2; i++) {
-      // Skip random rays based on scroll for shimmer effect
-      if (p.random() < shimmerThreshold) continue;
-
       let angle = (i * p.TWO_PI) / numLines2;
       let offsetEnd = p.random(10, 25);
       let x = (sunFirstPart + offsetEnd) * p.cos(angle);
@@ -178,9 +174,6 @@
     p.strokeWeight(sunBeamWidth);
     let numLines3 = p.random(250, 350);
     for (let i = 0; i < numLines3; i++) {
-      // Skip random rays based on scroll for shimmer effect
-      if (p.random() < shimmerThreshold) continue;
-
       let angle = (i * p.TWO_PI) / numLines3;
       let offsetEnd = p.random(10, 25);
       let x = (sunFirstPart / 1.5 + offsetEnd) * p.cos(angle);
