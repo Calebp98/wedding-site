@@ -28,6 +28,11 @@
   let treeRandomSeed = 42; // Fixed seed for consistent tree
   let currentScrollPercentage = 0; // Track scroll for sun shimmer effect
 
+  // Cached graphics buffers
+  let cachedSun: any = null;
+  let cachedGrass: any = null;
+  let cachedTrees: Map<number, any> = new Map(); // Cache tree at each depth level
+
   // Use Tufte background color
   const backgroundColor = "#fffff8";
   const treeColor = "#A67C52"; // Pastel brown for tree
@@ -107,40 +112,46 @@
     }
   }
 
-  function drawGrass(p: any) {
-    p.push();
+  function createCachedGrass(p: any) {
+    if (cachedGrass) return cachedGrass;
+
+    const g = p.createGraphics(p.width, p.height);
+    g.clear();
+    p.randomSeed(42); // Same seed for consistent grass
 
     // Draw grass blades with watercolor effect - lighter layers
-    for (let x = 0; x < p.width; x += p.random(1.5)) {
-      const baseY = p.height;
-      const topY = baseY - (p.height / 32 + p.noise(x / 5) * 15 - 7.5);
+    for (let x = 0; x < g.width; x += p.random(1.5)) {
+      const baseY = g.height;
+      const topY = baseY - (g.height / 32 + p.noise(x / 5) * 15 - 7.5);
       const topX = x + p.random(-2.5, 2.5);
-      watercolorLine(p, x, baseY, topX, topY, 0.5, grassColor, 4);
+      watercolorLine(g, x, baseY, topX, topY, 0.5, grassColor, 4);
     }
 
     // Add occasional flowers with watercolor stems
-    for (let x = 0; x < p.width; x += p.random(150)) {
-      const baseY = p.height;
-      const stemY = baseY - (p.height / 20 + p.noise(x) * 17.5 - 12.5);
+    for (let x = 0; x < g.width; x += p.random(150)) {
+      const baseY = g.height;
+      const stemY = baseY - (g.height / 20 + p.noise(x) * 17.5 - 12.5);
       const stemX = x + p.random(-7.5, 7.5);
-      watercolorLine(p, x, baseY, stemX, stemY, 1, grassColor, 5);
+      watercolorLine(g, x, baseY, stemX, stemY, 1, grassColor, 5);
 
       // Draw flower head with watercolor effect
-      p.push();
+      g.push();
       const r = parseInt(grassColor.slice(1, 3), 16);
-      const g = parseInt(grassColor.slice(3, 5), 16);
+      const gr = parseInt(grassColor.slice(3, 5), 16);
       const b = parseInt(grassColor.slice(5, 7), 16);
-      p.noStroke();
+      g.noStroke();
       const flowerSize = p.random(3, 5);
       for (let i = 0; i < 5; i++) {
-        p.fill(r, g, b, 50);
+        g.fill(r, gr, b, 50);
         const offsetX = p.random(-flowerSize * 0.3, flowerSize * 0.3);
         const offsetY = p.random(-flowerSize * 0.3, flowerSize * 0.3);
-        p.circle(stemX + offsetX, stemY + offsetY, flowerSize);
+        g.circle(stemX + offsetX, stemY + offsetY, flowerSize);
       }
-      p.pop();
+      g.pop();
     }
-    p.pop();
+
+    cachedGrass = g;
+    return g;
   }
 
   // Watercolor ray for sun
@@ -161,98 +172,120 @@
     }
   }
 
-  function drawSun(p: any) {
-    p.push();
-
-    // Use scroll percentage to vary random seed for shimmer effect
+  function createCachedSun(p: any) {
+    // Regenerate sun based on scroll for shimmer effect
     const shimmerSeed = Math.floor(currentScrollPercentage * 100) + 42;
+
+    const g = p.createGraphics(p.width, p.height);
+    g.clear();
     p.randomSeed(shimmerSeed);
 
     // Sun setup
     const sunBeamWidth = p.random(0.15, 0.45);
     const sunX = p.width * 0.15;
     const sunY = p.height * 0.35;
-    p.translate(sunX, sunY);
+    g.push();
+    g.translate(sunX, sunY);
 
     const sunFirstPart = p.random(75, 100);
 
     // First part of the sun - outer rays with watercolor
-    p.noFill();
+    g.noFill();
     let numLines1 = p.random(350, 450);
     for (let i = 0; i < numLines1; i++) {
       let angle = (i * p.TWO_PI) / numLines1;
       let offsetEnd = p.random(25, 45);
       let x = (sunFirstPart + offsetEnd) * p.cos(angle);
       let y = (sunFirstPart + offsetEnd) * p.sin(angle);
-      watercolorRay(p, 0, 0, x, y, sunBeamWidth / 3, sunColor, 2);
+      watercolorRay(g, 0, 0, x, y, sunBeamWidth / 3, sunColor, 2);
     }
 
     // Second part - filled circle and middle rays
-    p.fill(backgroundColor);
-    p.noStroke();
-    p.circle(0, 0, sunFirstPart * 2.2);
-    p.noFill();
+    g.fill(backgroundColor);
+    g.noStroke();
+    g.circle(0, 0, sunFirstPart * 2.2);
+    g.noFill();
     let numLines2 = p.random(350, 450);
     for (let i = 0; i < numLines2; i++) {
       let angle = (i * p.TWO_PI) / numLines2;
       let offsetEnd = p.random(10, 25);
       let x = (sunFirstPart + offsetEnd) * p.cos(angle);
       let y = (sunFirstPart + offsetEnd) * p.sin(angle);
-      watercolorRay(p, 0, 0, x, y, sunBeamWidth / 2, sunColor, 2);
+      watercolorRay(g, 0, 0, x, y, sunBeamWidth / 2, sunColor, 2);
     }
 
     // Third part - another filled circle and inner rays
-    p.fill(backgroundColor);
-    p.noStroke();
-    p.circle(0, 0, sunFirstPart * 1.5);
-    p.noFill();
+    g.fill(backgroundColor);
+    g.noStroke();
+    g.circle(0, 0, sunFirstPart * 1.5);
+    g.noFill();
     let numLines3 = p.random(250, 350);
     for (let i = 0; i < numLines3; i++) {
       let angle = (i * p.TWO_PI) / numLines3;
       let offsetEnd = p.random(10, 25);
       let x = (sunFirstPart / 1.5 + offsetEnd) * p.cos(angle);
       let y = (sunFirstPart / 1.5 + offsetEnd) * p.sin(angle);
-      watercolorRay(p, 0, 0, x, y, sunBeamWidth, sunColor, 2);
+      watercolorRay(g, 0, 0, x, y, sunBeamWidth, sunColor, 2);
     }
 
     // Final - center circle with watercolor edge
     const r = parseInt(sunColor.slice(1, 3), 16);
-    const g = parseInt(sunColor.slice(3, 5), 16);
+    const gr = parseInt(sunColor.slice(3, 5), 16);
     const b = parseInt(sunColor.slice(5, 7), 16);
 
-    p.fill(backgroundColor);
-    p.noStroke();
-    p.circle(0, 0, sunFirstPart / 1.5 - sunBeamWidth * 1.5);
+    g.fill(backgroundColor);
+    g.noStroke();
+    g.circle(0, 0, sunFirstPart / 1.5 - sunBeamWidth * 1.5);
 
     // Watercolor circle edge
     for (let i = 0; i < 5; i++) {
-      p.noFill();
-      p.stroke(r, g, b, 50);
-      p.strokeWeight(sunBeamWidth * 1.5 + p.random(-sunBeamWidth * 0.3, sunBeamWidth * 0.3));
+      g.noFill();
+      g.stroke(r, gr, b, 50);
+      g.strokeWeight(sunBeamWidth * 1.5 + p.random(-sunBeamWidth * 0.3, sunBeamWidth * 0.3));
       const offset = p.random(-1, 1);
-      p.circle(offset, offset, sunFirstPart / 1.5);
+      g.circle(offset, offset, sunFirstPart / 1.5);
     }
 
-    p.pop();
+    g.pop();
+    cachedSun = g;
+    return g;
   }
 
-  function generateTree(p: any) {
-    p.push();
+  function createCachedTree(p: any, depth: number) {
+    if (cachedTrees.has(depth)) {
+      return cachedTrees.get(depth);
+    }
+
+    const g = p.createGraphics(p.width, p.height);
+    g.clear();
     p.randomSeed(treeRandomSeed); // Use same seed for consistent tree
-    p.translate(p.width * 0.85, p.height);
-    p.stroke(treeColor);
-    p.fill(0, 0, 0, 0);
-    branch(p, p.random(0, 10), currentTreeDepth);
-    p.pop();
+
+    g.push();
+    g.translate(p.width * 0.85, p.height);
+    g.stroke(treeColor);
+    g.fill(0, 0, 0, 0);
+    branch(g, p.random(0, 10), depth);
+    g.pop();
+
+    cachedTrees.set(depth, g);
+    return g;
   }
 
   function generateArt(p: any) {
     console.log('Generating tree art with depth:', currentTreeDepth);
     p.background(backgroundColor);
-    p.randomSeed(42); // Same seed for consistent grass
-    drawSun(p);
-    drawGrass(p);
-    generateTree(p);
+
+    // Draw cached sun (regenerate for shimmer effect)
+    const sun = createCachedSun(p);
+    p.image(sun, 0, 0);
+
+    // Draw cached grass (only generated once)
+    const grass = createCachedGrass(p);
+    p.image(grass, 0, 0);
+
+    // Draw cached tree at current depth
+    const tree = createCachedTree(p, currentTreeDepth);
+    p.image(tree, 0, 0);
   }
 
   function handleScroll() {
@@ -302,8 +335,14 @@
         p.draw = () => {};
 
         p.windowResized = () => {
-          console.log('Window resized, regenerating tree');
+          console.log('Window resized, clearing cache and regenerating');
           p.resizeCanvas(p.windowWidth, p.windowHeight);
+
+          // Clear all caches on resize since dimensions changed
+          cachedSun = null;
+          cachedGrass = null;
+          cachedTrees.clear();
+
           generateArt(p);
         };
       });
