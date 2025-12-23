@@ -155,7 +155,6 @@
     }
 
     cachedGrass = g;
-    console.log('Grass cache created, size:', g.width, 'x', g.height);
     return g;
   }
 
@@ -258,11 +257,9 @@
 
   function createCachedTree(p: any, depth: number) {
     if (cachedTrees.has(depth)) {
-      console.log('Using cached tree for depth:', depth);
       return cachedTrees.get(depth);
     }
 
-    console.log('Creating new tree cache for depth:', depth);
     const g = p.createGraphics(p.width, p.height);
     g.clear();
     p.randomSeed(treeRandomSeed); // Use same seed for consistent tree
@@ -275,27 +272,22 @@
     g.pop();
 
     cachedTrees.set(depth, g);
-    console.log('Tree cache created for depth:', depth, 'size:', g.width, 'x', g.height);
     return g;
   }
 
   function generateArt(p: any) {
-    console.log('Generating tree art with depth:', currentTreeDepth);
     p.background(backgroundColor);
 
     // Draw cached sun (regenerate for shimmer effect)
     const sun = createCachedSun(p);
-    console.log('Sun created:', sun);
     p.image(sun, 0, 0);
 
     // Draw cached grass (only generated once)
     const grass = createCachedGrass(p);
-    console.log('Grass created:', grass);
     p.image(grass, 0, 0);
 
     // Draw cached tree at current depth
     const tree = createCachedTree(p, currentTreeDepth);
-    console.log('Tree created:', tree);
     p.image(tree, 0, 0);
   }
 
