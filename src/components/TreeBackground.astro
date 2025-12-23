@@ -75,8 +75,8 @@
       target.vertex(offsetX1, offsetY1);
       for (let j = 1; j < steps; j++) {
         const t = j / steps;
-        const x = target.lerp(offsetX1, offsetX2, t) + rand(p) * weight * 0.3 - weight * 0.15;
-        const y = target.lerp(offsetY1, offsetY2, t) + rand(p) * weight * 0.3 - weight * 0.15;
+        const x = p.lerp(offsetX1, offsetX2, t) + rand(p) * weight * 0.3 - weight * 0.15;
+        const y = p.lerp(offsetY1, offsetY2, t) + rand(p) * weight * 0.3 - weight * 0.15;
         target.vertex(x, y);
       }
       target.vertex(offsetX2, offsetY2);
