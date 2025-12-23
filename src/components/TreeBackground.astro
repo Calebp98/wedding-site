@@ -120,15 +120,18 @@
     p.randomSeed(42); // Same seed for consistent grass
 
     // Draw grass blades with watercolor effect - lighter layers
-    for (let x = 0; x < g.width; x += p.random(1.5)) {
+    let x = 0;
+    while (x < g.width) {
       const baseY = g.height;
       const topY = baseY - (g.height / 32 + p.noise(x / 5) * 15 - 7.5);
       const topX = x + p.random(-2.5, 2.5);
       watercolorLine(g, p, x, baseY, topX, topY, 0.5, grassColor, 4);
+      x += p.random(1, 2);
     }
 
     // Add occasional flowers with watercolor stems
-    for (let x = 0; x < g.width; x += p.random(150)) {
+    x = 0;
+    while (x < g.width) {
       const baseY = g.height;
       const stemY = baseY - (g.height / 20 + p.noise(x) * 17.5 - 12.5);
       const stemX = x + p.random(-7.5, 7.5);
@@ -148,9 +151,11 @@
         g.circle(stemX + offsetX, stemY + offsetY, flowerSize);
       }
       g.pop();
+      x += p.random(100, 200);
     }
 
     cachedGrass = g;
+    console.log('Grass cache created, size:', g.width, 'x', g.height);
     return g;
   }
 
@@ -253,9 +258,11 @@
 
   function createCachedTree(p: any, depth: number) {
     if (cachedTrees.has(depth)) {
+      console.log('Using cached tree for depth:', depth);
       return cachedTrees.get(depth);
     }
 
+    console.log('Creating new tree cache for depth:', depth);
     const g = p.createGraphics(p.width, p.height);
     g.clear();
     p.randomSeed(treeRandomSeed); // Use same seed for consistent tree
@@ -268,6 +275,7 @@
     g.pop();
 
     cachedTrees.set(depth, g);
+    console.log('Tree cache created for depth:', depth, 'size:', g.width, 'x', g.height);
     return g;
   }
 
@@ -277,14 +285,17 @@
 
     // Draw cached sun (regenerate for shimmer effect)
     const sun = createCachedSun(p);
+    console.log('Sun created:', sun);
     p.image(sun, 0, 0);
 
     // Draw cached grass (only generated once)
     const grass = createCachedGrass(p);
+    console.log('Grass created:', grass);
     p.image(grass, 0, 0);
 
     // Draw cached tree at current depth
     const tree = createCachedTree(p, currentTreeDepth);
+    console.log('Tree created:', tree);
     p.image(tree, 0, 0);
   }
 
