@@ -24,10 +24,19 @@
   let currentTimer: ReturnType<typeof setInterval> | null = null;
   let inTimelineMode = false;
 
+  // Normalize date to midnight for accurate day counting
+  function normalizeDate(date: Date): Date {
+    const normalized = new Date(date);
+    normalized.setHours(0, 0, 0, 0);
+    return normalized;
+  }
+
   // Calculate days between two dates
   function calculateDays(date1: Date, date2: Date): number {
+    const normalizedDate1 = normalizeDate(date1);
+    const normalizedDate2 = normalizeDate(date2);
     const oneDay = 24 * 60 * 60 * 1000;
-    return Math.round(Math.abs((date2.getTime() - date1.getTime()) / oneDay));
+    return Math.round((normalizedDate2.getTime() - normalizedDate1.getTime()) / oneDay);
   }
 
   // Show days until wedding from today
