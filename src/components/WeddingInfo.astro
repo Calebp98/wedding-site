@@ -8,25 +8,27 @@
     <div class="info-value">September 12, 2026</div>
   </div>
 
-  <div class="info-item time">
-    <div class="info-label">Time</div>
-    <div class="info-value">[Time]</div>
-  </div>
-
   <div class="info-item location">
     <div class="info-label">Location</div>
-    <div class="info-value">Upper House</div>
+    <div class="info-value">
+      Upper House
+      <div class="location-links">
+        <a href="https://www.instagram.com/upperhouseestate/?hl=en-gb" target="_blank" rel="noopener noreferrer" aria-label="View Upper House on Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+            <rect x="2" y="2" width="20" height="20" rx="0" ry="0"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="18" cy="6" r="1"></circle>
+          </svg>
+        </a>
+        <a href="https://www.google.com/maps?sca_esv=e1ca3c77cb4d9eee&biw=864&bih=958&aic=0&output=search&q=Location+Upper+House+Kinder,+Hayfield,+High+Peak,+SK22+2LJ&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpUrv6YeyJhXfuYqj4Fj6c1Tg5t_ufWNUvD2V-uX26AFmFqEjHgZkCKffQRlapZrqyCt0nzC4JimhnbChBfxx0tTrsttG4kEDkdoT3TrYMFk_XOukpzs6Uot1YTY0WU8RsPcwzh3TFIG-5EWMdlIG5zvC42f-hCz4e_8VxDOXB4llzlmMyIoV-n0dHyahXIoR_6pZa_w&entry=mc&ved=1t:200715&ictx=111" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
     <div class="info-detail">Kinder, Hayfield, High Peak, SK22 2LJ</div>
-  </div>
-
-  <div class="info-item dress-code">
-    <div class="info-label">Dress Code</div>
-    <div class="info-value">[Dress Code]</div>
-  </div>
-
-  <div class="info-item rsvp">
-    <div class="info-label">RSVP By</div>
-    <div class="info-value">[RSVP Date]</div>
   </div>
 </div>
 
@@ -61,6 +63,34 @@
     font-size: 1.4rem;
     font-weight: 400;
     color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .location-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .location-links a {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .location-links a:hover {
+    opacity: 0.6;
+    background-color: transparent;
+  }
+
+  .location-links svg {
+    width: 20px;
+    height: 20px;
   }
 
   .info-detail {
@@ -81,6 +111,11 @@
 
     .info-value {
       font-size: 1.2rem;
+    }
+
+    .location-links svg {
+      width: 18px;
+      height: 18px;
     }
 
     .info-label {

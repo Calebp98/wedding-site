@@ -1,36 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navigation from "../components/Navigation.astro";
 import TimelineSection from "../components/TimelineSection.astro";
 import DaysCounter from "../components/DaysCounter.astro";
 import WeddingInfo from "../components/WeddingInfo.astro";
-import CollapsibleSection from "../components/CollapsibleSection.astro";
-import Schedule from "../components/Schedule.astro";
-import Menu from "../components/Menu.astro";
+import FAQ from "../components/FAQ.astro";
+import Transport from "../components/Transport.astro";
 import Accommodations from "../components/Accommodations.astro";
-import Contact from "../components/Contact.astro";
 import "../styles/global.css";
 ---
 
 <Layout title="Our Story">
   <div class="hero">
     <h1>Caleb & Grace</h1>
-    <p>Lorem ipsum dolor sit amet</p>
+    <p>We're getting married!</p>
   </div>
-
-  <Navigation />
 
   <div class="wedding-celebration">
     <div class="celebration-date">September 12, 2026</div>
-    <h2 class="celebration-title">[The Wedding]</h2>
+    <h2 class="celebration-title">Our Wedding Day</h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
+      After many library dates, transatlantic flights, and (mis)adventures in
+      the Peak District we're finally tying the knot.
     </p>
-    <p>
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-      ut aliquip ex ea commodo consequat.
-    </p>
+    <p>We're so excited to share this day with the people we love most.</p>
   </div>
 
   <div class="info-and-counter-wrapper">
@@ -38,111 +30,375 @@ import "../styles/global.css";
     <DaysCounter />
   </div>
 
-  <CollapsibleSection title="[sample text - not real info] Schedule of Events" id="schedule">
-    <Schedule />
-  </CollapsibleSection>
-
-  <CollapsibleSection title="[sample text - not real info] Menu" id="menu">
-    <Menu />
-  </CollapsibleSection>
-
-  <CollapsibleSection title="[sample text - not real info] Accommodations" id="accommodations">
-    <Accommodations />
-  </CollapsibleSection>
-
-  <CollapsibleSection title="[sample text - not real info] Questions?" id="contact">
-    <Contact />
-  </CollapsibleSection>
-
   <article>
     <TimelineSection
-      eventDate="2025-03-20"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
+      eventDate="2025-05-03"
+      eventName="The Proposal"
+      displayDate="3rd May 2025"
+      title="Yes Please!"
     >
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="marginnote"
-          >Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
-        >
-      </p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    </TimelineSection>
-
-    <TimelineSection
-      eventDate="2023-09-10"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
-    >
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur.
+        In Caleb's last week living in the US, we took a trip to Yosemite
+        (Grace's favourite place) with a few friends. Caleb proposed in Mariposa
+        Grove of Giant Sequoias.
       </p>
       <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-        officia deserunt mollit anim.
+        Grace said "yes please". Caleb moved back to the UK and we (after a few
+        months) started planning our wedding.
       </p>
     </TimelineSection>
 
     <TimelineSection
-      eventDate="2022-07-04"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
+      eventDate="2024-09-01"
+      eventName="Yosemite"
+      displayDate="September 2024"
+      title="Favourite Place on Earth"
     >
       <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem. <span class="marginnote"
-          >Accusantium doloremque laudantium totam rem aperiam.</span
-        >
+        We went to Yosemite National Park for the first time — spent time in
+        Yosemite Valley, saw the Dawn Wall at dawn and went to Glacier Point.
       </p>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+      <p>Grace said it's her "favourite place on earth".</p>
     </TimelineSection>
 
     <TimelineSection
-      eventDate="2021-11-25"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
+      eventDate="2024-04-01"
+      eventName="Birthday Surprise"
+      displayDate="April 2024"
+      title="Surprise Visit"
     >
-      <p>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-        fugit, sed quia consequuntur.
-      </p>
-      <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+      <p>Grace flew to the US to surprise Caleb for his birthday.</p>
     </TimelineSection>
 
     <TimelineSection
-      eventDate="2021-05-14"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
+      eventDate="2024-02-07"
+      eventName="5 Year Anniversary"
+      displayDate="7th February 2024"
+      title="5 Years Together"
     >
-      <p>
-        Consectetur, adipisci velit, sed quia non numquam eius modi tempora
-        incidunt ut labore et dolore magnam.
-      </p>
-      <p>Aliquam quaerat voluptatem ut enim ad minima veniam.</p>
+      <p>5 year anniversary!</p>
     </TimelineSection>
 
     <TimelineSection
-      eventDate="2021-04-01"
-      eventName="[Event Title]"
-      displayDate="[Month Year]"
-      title="[Event Title]"
+      eventDate="2023-03-01"
+      eventName="First Berkeley Visit"
+      displayDate="March 2023"
+      title="Grace Visits California"
     >
       <p>
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur.
+        Grace's first trip to Berkeley to visit Caleb. There was freakishly bad
+        weather in the UK for that time of year. After a set of terrible night
+        shifts and a leaky hospital roof she took the flight to sunny
+        California.
+      </p>
+      <p>Long distance really wasn't that bad!</p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2022-10-01"
+      eventName="Start of Long Distance"
+      displayDate="October 2022"
+      title="Long Distance Begins"
+    >
+      <p>
+        This was the start of three years of official long-distance with Caleb living
+        in Berkeley, California and Grace living in Cambridge, UK.
+      </p>
+      <p>We found long-distance much easier than you might think.</p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2022-02-01"
+      eventName="Cambridge Move"
+      displayDate="July 2021"
+      title="Caleb Starts a New Job"
+    >
+      <p>
+        Caleb started a new job managing a philanthropic foundation, travelling
+        regularly to the US.
+      </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2021-07-01"
+      eventName="Cambridge Move"
+      displayDate="July 2021"
+      title="Grace Graduates"
+    >
+      <p>
+        Grace graduated from medical school and started working in Cambridge as a
+        doctor. Caleb also moved to Cambridge.
+      </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2021-02-07"
+      eventName="2 Year Anniversary"
+      displayDate="February 2021"
+      title="Snow & Doughnuts"
+    >
+      <p>
+        At this point Caleb was living in a house a street away from Grace's so
+        we saw each other every day but were socially distanced for lockdown.
+      </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2020-03-01"
+      eventName="COVID Lockdown"
+      displayDate="March 2020"
+      title="The Great Sleepover of 2020"
+    >
+      <p>
+        Caleb escapes his London flat and we lock down at the start of COVID in
+        Grace's university house with 2 of her 5 housemates (Alex and Rhiannah).
+        We were two couples in a big house with a garden and had a (relatively)
+        great time.
       </p>
       <p>
-        Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. <span class="marginnote"
-          >At vero eos et accusamus et iusto odio dignissimos ducimus.</span
-        >
+        We watched all of Game of Thrones and The US Office, cooked good food,
+        and went climbing in the Peak District most weeks.
       </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2019-12-01"
+      eventName="First Christmas"
+      displayDate="December 2019"
+      title="Hamilton & First Christmas"
+    >
+      <p>
+        Our first Christmas together. We're still middle-distance
+        (Sheffield-London) and Caleb surprised Grace with tickets to see
+        Hamilton, our favourite musical, which we'd been obsessing about for
+        years.
+      </p>
+      <p>We are fluent in the soundtrack!</p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2019-08-01"
+      eventName="First Summer Apart"
+      displayDate="August 2019"
+      title="Long Distance & 'I Love You'"
+    >
+      <p>
+        We spent this summer in our first taste of long-distance. Grace spent 5
+        weeks in Bangladesh for her Masters and Caleb moved to London for a
+        nonprofit incubator.
+      </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2019-05-12"
+      eventName="First Photos Together"
+      displayDate="12th May 2019"
+      title="Official Couple"
+    >
+      <p>Now boyfriend and girlfriend, we went to Caleb's final year ball.</p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2019-02-07"
+      eventName="First Date"
+      displayDate="7th February 2019"
+      title="Our First Date"
+    >
+      <p>
+        Our official first date! We met at the engineering building, walked to
+        Marmadukes for a coffee/cake and then perused the Millennium Gallery.
+      </p>
+      <p>
+        We spent the next few months going on lots of dates, favourite spots
+        included Stanage Edge in the Peak District and coworking in the library.
+      </p>
+    </TimelineSection>
+
+    <TimelineSection
+      eventDate="2018-07-01"
+      eventName="First Meeting"
+      displayDate="July 2018"
+      title="First Meeting"
+    >
+      <p>
+        We met for the first time this summer at Grace's church followed by a
+        few months of bumping into each other either at church or on nights out.
+      </p>
+      <p>One of our first conversations was about Effective Altruism.</p>
     </TimelineSection>
   </article>
+
+  <section class="tba-section" id="schedule">
+    <h2 class="tba-section-title">Schedule</h2>
+    <div class="tba-box">
+      <span class="tba-label">To Be Announced</span>
+      <p>The full day schedule will be shared closer to the date.</p>
+    </div>
+  </section>
+
+  <section class="tba-section" id="menu">
+    <h2 class="tba-section-title">Menu</h2>
+    <div class="tba-box">
+      <span class="tba-label">To Be Announced</span>
+      <p>Menu details will be shared once finalised with the venue.</p>
+    </div>
+  </section>
+
+  <Transport />
+
+  <section class="accom-section" id="accommodations">
+    <h2 class="accom-section-title">Accommodations</h2>
+    <Accommodations />
+  </section>
+
+  <div id="faq">
+    <FAQ />
+  </div>
+
+  <div class="contact-section" id="contact">
+    <h2>Questions?</h2>
+    <p>
+      Feel free to reach out to Caleb, Grace, and Freya (our wedding planner).
+    </p>
+    <div class="contact-details">
+      <a href="mailto:calebgracewed26@gmail.com">calebgracewed26@gmail.com</a>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .tba-section {
+    max-width: 700px;
+    width: 88%;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .tba-section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
+    color: #111;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .tba-box {
+    border: 2px dashed #bbb;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .tba-label {
+    display: inline-block;
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+
+  .tba-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .tba-section {
+      width: 100%;
+      padding: 3rem 1rem 1.5rem;
+    }
+
+    .tba-section-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .accom-section {
+    max-width: 87.5rem;
+    width: 88%;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+    box-sizing: border-box;
+  }
+
+  .accom-section-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+    color: #111;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 760px) {
+    .accom-section {
+      width: 100%;
+      padding: 4rem 1rem 3rem;
+    }
+
+    .accom-section-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  .contact-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 1.5rem 0;
+    color: #111;
+  }
+
+  .contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .contact-details a {
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      margin: 3rem auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .contact-section p {
+      font-size: 1rem;
+    }
+
+    .contact-details a {
+      font-size: 0.9rem;
+    }
+  }
+</style>
 
 <script>
   // Intersection Observer for scroll-triggered animations
@@ -160,9 +416,7 @@ import "../styles/global.css";
   }, observerOptions);
 
   // Observe all timeline sections
-  document
-    .querySelectorAll(".timeline-section")
-    .forEach((element) => {
-      observer.observe(element);
-    });
+  document.querySelectorAll(".timeline-section").forEach((element) => {
+    observer.observe(element);
+  });
 </script>

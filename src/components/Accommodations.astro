@@ -1,204 +1,344 @@
 ---
-// Accommodations Details Component
+// Accommodations Component — sourced from Upper House Guest Guide
 ---
 
-<div>
-  <p class="section-subtitle">Where to stay</p>
+<div class="accom-wrapper">
+  <p class="accom-intro">
+    All options below are listed in order of closest proximity to Upper House.
+    Remember that taxis in rural areas must always be booked in advance — see
+    the taxi list at the bottom of this section.
+  </p>
 
-  <div class="hotel-block">
-    <h3>The Grand Hotel</h3>
-    <div class="hotel-details">
-      <p class="hotel-address">123 Main Street, City, State 12345</p>
-      <p class="hotel-phone">(555) 123-4567</p>
-      <p class="hotel-distance">2 miles from venue</p>
+  <div class="accom-category">
+    <h3 class="accom-cat-title">Self-Catering</h3>
+
+    <div class="accom-item">
+      <h4>Booth Farm</h4>
+      <p class="accom-address">SK22 2LJ</p>
+      <p>5-bed neighbouring property, sleeps 10.</p>
+      <p class="accom-book">Available on Booking.com — search "Booth Farm UK32337 Hayfield"</p>
     </div>
-    <div class="hotel-booking">
-      <p>
-        <strong>Room Block:</strong> Book by August 12, 2026 for our special
-        rate
-      </p>
-      <p class="discount-code">Use code: <span>WEDDING2026</span></p>
-      <p class="room-rate">$159/night + tax</p>
+
+    <div class="accom-item">
+      <h4>Farlands Holiday Cottage</h4>
+      <p class="accom-address">SK22 2LJ</p>
+      <p>2-bedroom house attached to a country lodge.</p>
+      <p class="accom-book">Available on Airbnb — search "Farlands Holiday Cottage stunning location"</p>
+      <p class="accom-contact">James and Sarah Ellson &bull; <a href="tel:07958930049">07958 930049</a></p>
     </div>
-    <a
-      href="https://www.example.com/book"
-      class="booking-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Book Your Room →
-    </a>
+
+    <div class="accom-item">
+      <h4>Peak Cottage, Hayfield</h4>
+      <p>2 bedrooms, sleeps 4.</p>
+      <p class="accom-book">Available on Airbnb — search "Peak Cottage Hayfield. Perfect for Kinder Scout!"</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Drovers Cottage, 115 Kinder Road</h4>
+      <p class="accom-address">Hayfield, SK22 2LH</p>
+      <p>2 bedrooms, sleeps 4.</p>
+      <p class="accom-book">Available on Airbnb — search "Drovers Cottage. Kinder Road. Hayfield"</p>
+      <p class="accom-contact"><a href="tel:01608810366">01608 810366</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Bowden Bridge Cottage</h4>
+      <p class="accom-address">Kinder Road, Hayfield, SK22 2LH</p>
+      <p>2-bedroom apartment adjoining owner's house.</p>
+      <p class="accom-book"><a href="https://www.peakdistrict-self-catering.co.uk/bowdenbridgecottage-hayfield" target="_blank" rel="noopener noreferrer">peakdistrict-self-catering.co.uk</a></p>
+      <p class="accom-contact">Marguerite Easter &bull; <a href="tel:01663743975">01663 743975</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Craigmore Cottage</h4>
+      <p class="accom-address">123 Kinder Road, Hayfield, SK22 2LH</p>
+      <p>1-bedroom walker's accommodation.</p>
+      <p class="accom-book"><a href="https://www.craigmorecottage.com" target="_blank" rel="noopener noreferrer">craigmorecottage.com</a></p>
+      <p class="accom-contact">Lorna Young &bull; <a href="tel:07855458923">07855 458923</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Farm Stay, Hayfield</h4>
+      <p>1 bedroom, sleeps 2.</p>
+      <p class="accom-book">Available on Airbnb — search "Cosy walker's, biker's or horse rider's hideaway in Hayfield (hosted by William)"</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Woolpack Studio, Hayfield</h4>
+      <p>1 bedroom, sleeps 2.</p>
+      <p class="accom-book">Available on Airbnb — search "Woolpack Studio: Stylish Space, Hayfield"</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Kinder Path Cottage</h4>
+      <p class="accom-address">111 Kinder Road, Hayfield, SK22 2LE</p>
+      <p>Sleeps 3.</p>
+      <p class="accom-book">Tripadvisor ref #HL5321408</p>
+      <p class="accom-contact"><a href="tel:07955581648">07955 581648</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>5 Vicarage Lane</h4>
+      <p class="accom-address">Hayfield, SK22 2HT</p>
+      <p>2-bedroom cottage.</p>
+      <p class="accom-book"><a href="https://www.sykescottages.co.uk" target="_blank" rel="noopener noreferrer">sykescottages.co.uk</a> ref: 14268</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>13A Kinder Road</h4>
+      <p class="accom-address">Hayfield, SK22 2HJ</p>
+      <p>Studio / 1-bedroom apartment.</p>
+      <p class="accom-book"><a href="https://www.sykescottages.co.uk" target="_blank" rel="noopener noreferrer">sykescottages.co.uk</a> ref: 17075</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>New Mills Modern Apartment with Private Patio</h4>
+      <p>1 bedroom, sleeps 2.</p>
+      <p class="accom-book">Available on Airbnb — search "New Mills Modern Apartment with Private Patio"</p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Brow Farm</h4>
+      <p class="accom-address">High Lea Road, New Mills, SK22 3DZ</p>
+      <p>3-bedroom barn conversion, sleeps 6. In-house dog sitting service available for wedding guests.</p>
+      <p class="accom-book"><a href="https://www.stayatbrowfarm.co.uk" target="_blank" rel="noopener noreferrer">stayatbrowfarm.co.uk</a> &bull; <a href="mailto:stayatbrowfarm@gmail.com">stayatbrowfarm@gmail.com</a></p>
+      <p class="accom-contact">Catherine Bills &bull; <a href="tel:07811412660">07811 412660</a></p>
+    </div>
+
+    <p class="accom-note">Further self-catering options can be found on Airbnb and Booking.com — search "Hayfield Village, High Peak, Derbyshire".</p>
   </div>
 
-  <div class="hotel-block">
-    <h3>Cozy Inn & Suites</h3>
-    <div class="hotel-details">
-      <p class="hotel-address">456 Oak Avenue, City, State 12345</p>
-      <p class="hotel-phone">(555) 234-5678</p>
-      <p class="hotel-distance">3 miles from venue</p>
+  <div class="accom-category">
+    <h3 class="accom-cat-title">Bed & Breakfast</h3>
+
+    <div class="accom-item">
+      <h4>Millies Bed & Breakfast</h4>
+      <p class="accom-address">7 Church Street, Hayfield, SK22 2JE</p>
+      <p>Smart rooms in the village centre above a café and chocolatier.</p>
+      <p class="accom-contact"><a href="tel:01663741584">01663 741584</a></p>
     </div>
-    <div class="hotel-booking">
-      <p>
-        <strong>Room Block:</strong> Book by August 12, 2026 for our special
-        rate
-      </p>
-      <p class="discount-code">Use code: <span>WEDDING2026</span></p>
-      <p class="room-rate">$129/night + tax</p>
+
+    <div class="accom-item">
+      <h4>The Waltzing Weasel</h4>
+      <p class="accom-address">8 New Mills Road, High Peak, SK22 1BT</p>
+      <p>Large, family-run B&B with excellent facilities and great breakfast. 7 en-suite doubles and 1 en-suite single.</p>
+      <p class="accom-contact">Carol and Lorraine Humphreys &bull; <a href="tel:01663743402">01663 743402</a></p>
     </div>
-    <a
-      href="https://www.example.com/book"
-      class="booking-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Book Your Room →
-    </a>
   </div>
 
-  <div class="additional-info">
-    <h3>Other Options</h3>
-    <p>
-      The area also offers many Airbnb and vacation rental options. We
-      recommend booking early as September is a popular time to visit!
-    </p>
-    <p>
-      <strong>Complimentary shuttle service</strong> will be provided from both
-      hotels to the venue and back.
-    </p>
+  <div class="accom-category">
+    <h3 class="accom-cat-title">Pubs with Accommodation</h3>
+
+    <div class="accom-item">
+      <h4>The Sportsman Inn</h4>
+      <p class="accom-address">Kinder Road, SK22 2LE</p>
+      <p>Newly refurbished accommodation, great food, welcoming hosts.</p>
+      <p class="accom-contact"><a href="tel:01663741565">01663 741565</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>Kinder Lodge</h4>
+      <p class="accom-address">10 New Mills Road, SK22 2JG</p>
+      <p>Pleasant, modern accommodation, reasonable rates, good breakfast.</p>
+      <p class="accom-contact"><a href="tel:01663743613">01663 743613</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>The George Hotel</h4>
+      <p class="accom-address">14 Church Street, SK22 2JE</p>
+      <p>Historic building, reasonable rates, good pub grub.</p>
+      <p class="accom-contact"><a href="tel:01663745295">01663 745295</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>The Lantern Pike Inn</h4>
+      <p class="accom-address">45 Glossop Road, Little Hayfield, SK22 2NG</p>
+      <p>Country hostelry, welcoming atmosphere.</p>
+      <p class="accom-contact"><a href="tel:01663747590">01663 747590</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>The Lamb Inn</h4>
+      <p class="accom-address">Hayfield Road, Chapel-en-le-Frith, SK23 0JF</p>
+      <p>Three newly built motel-style rooms with own front doors adjacent to a welcoming traditional country inn. 1.5 miles from Hayfield centre. Great food.</p>
+      <p class="accom-contact"><a href="tel:01663750519">01663 750519</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>The Sycamore Inn</h4>
+      <p class="accom-address">Sycamore Road, Birch Vale, SK22 1AB</p>
+      <p>Newly refurbished bedrooms, large restaurant and pub in nearby village.</p>
+      <p class="accom-contact"><a href="tel:01663743561">01663 743561</a></p>
+    </div>
+
+    <div class="accom-item">
+      <h4>The Pack Horse</h4>
+      <p class="accom-address">Mellor Road, New Mills, SK22 4QQ</p>
+      <p>A little further away but focused on the traveller.</p>
+      <p class="accom-contact"><a href="tel:01663742365">01663 742365</a></p>
+    </div>
+  </div>
+
+  <div class="accom-category">
+    <h3 class="accom-cat-title">Hotel</h3>
+
+    <div class="accom-item">
+      <h4>Travelodge Glossop</h4>
+      <p class="accom-address">Victoria Street, Glossop, SK13 8HT</p>
+      <p class="accom-contact"><a href="tel:08719846330">0871 984 6330</a></p>
+    </div>
+  </div>
+
+  <div class="accom-category">
+    <h3 class="accom-cat-title">Campsite</h3>
+
+    <div class="accom-item">
+      <h4>Hayfield Camping and Caravanning Club Site</h4>
+      <p class="accom-address">Kinder Road</p>
+      <p>Open March–November. Camping pods available.</p>
+      <p class="accom-contact"><a href="tel:01663745394">01663 745394</a> / <a href="tel:02476475426">024 7647 5426</a></p>
+    </div>
+  </div>
+
+  <div class="accom-category accom-taxis">
+    <h3 class="accom-cat-title">Taxis</h3>
+    <p class="accom-taxi-note">Taxis in rural areas must always be booked in advance. There is no mobile signal at Upper House, but wifi is available for wifi calling.</p>
+
+    <ul class="taxi-list">
+      <li><span class="taxi-name">Lynx Taxis</span> <a href="tel:01614831099">0161 483 1099</a></li>
+      <li><span class="taxi-name">Metro</span> <a href="tel:01614808000">0161 480 8000</a></li>
+      <li><span class="taxi-name">Pad Tax</span> <a href="tel:01457854360">01457 854 360</a></li>
+      <li><span class="taxi-name">BN & G Taxis Ltd</span> <a href="tel:01298812511">01298 812511</a> <span class="taxi-note">(4–33 seats)</span></li>
+      <li><span class="taxi-name">VIP Taxis</span> <a href="tel:01614270777">0161 427 0777</a></li>
+      <li><span class="taxi-name">Pat's Private Hire</span> <a href="tel:01298812388">01298 812 388</a></li>
+      <li><span class="taxi-name">GrabbaCab</span> <a href="tel:01663740880">01663 740880</a></li>
+    </ul>
   </div>
 </div>
 
 <style>
-  .section-subtitle {
-    text-align: center;
-    font-style: italic;
+  .accom-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .accom-intro {
+    font-size: 1rem;
     color: #555;
-    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0 0 2.5rem 0;
-  }
-
-  .hotel-block {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .hotel-block:last-of-type {
-    margin-bottom: 2rem;
-  }
-
-  .hotel-block h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin: 0 0 1rem 0;
-    color: #111;
-  }
-
-  .hotel-details {
-    margin-bottom: 1.5rem;
-  }
-
-  .hotel-details p {
-    margin: 0.3rem 0;
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  .hotel-address {
-    font-weight: 400;
-  }
-
-  .hotel-phone {
-    font-variant: tabular-nums;
-  }
-
-  .hotel-distance {
     font-style: italic;
-    color: #666;
+    border-left: 3px solid #ddd;
+    padding-left: 1rem;
+  }
+
+  .accom-category {
+    margin-bottom: 3rem;
+    border-left: 3px solid #111;
+    padding-left: 1.5rem;
+  }
+
+  .accom-cat-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 1.5rem 0;
+    color: #111;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     font-size: 0.9rem;
   }
 
-  .hotel-booking {
-    margin: 1.5rem 0;
+  .accom-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
   }
 
-  .hotel-booking p {
-    margin: 0.5rem 0;
-    font-size: 0.95rem;
-    color: #333;
+  .accom-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  .discount-code {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  .discount-code span {
-    font-family: monospace;
-    background-color: #f5f5f5;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid #ddd;
-    font-weight: 400;
+  .accom-item h4 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 0.2rem 0;
     color: #111;
   }
 
-  .room-rate {
-    font-weight: 400;
-    color: #111;
-  }
-
-  .booking-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #111;
-    color: #fffff8;
-    text-decoration: none;
+  .accom-item p {
+    margin: 0.2rem 0;
     font-size: 0.9rem;
-    letter-spacing: 0.05em;
-    transition: background-color 0.2s ease;
+    line-height: 1.5;
+    color: #444;
   }
 
-  .booking-link:hover {
-    background-color: #333;
+  .accom-address {
+    color: #777 !important;
+    font-size: 0.85rem !important;
   }
 
-  .additional-info {
-    margin-top: 2rem;
+  .accom-book {
+    font-size: 0.85rem !important;
+    color: #555 !important;
   }
 
-  .additional-info h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin: 0 0 1rem 0;
-    color: #111;
+  .accom-contact {
+    font-size: 0.85rem !important;
+    color: #555 !important;
   }
 
-  .additional-info p {
-    margin: 0.8rem 0;
-    font-size: 0.95rem;
+  .accom-note {
+    margin-top: 1.5rem !important;
+    font-size: 0.85rem !important;
+    color: #777 !important;
+    font-style: italic;
+    border-bottom: none !important;
+  }
+
+  .accom-taxis .accom-taxi-note {
+    font-size: 0.9rem;
     color: #555;
+    margin: 0 0 1.25rem 0;
     line-height: 1.6;
   }
 
-  .additional-info strong {
-    color: #111;
+  .taxi-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .taxi-list li {
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .taxi-name {
+    font-weight: 500;
+    min-width: 160px;
+    flex-shrink: 0;
+  }
+
+  .taxi-note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-left: 0.25rem;
   }
 
   @media (max-width: 768px) {
-    .hotel-block h3 {
-      font-size: 1.2rem;
+    .accom-category {
+      padding-left: 1rem;
     }
 
-    .hotel-details p,
-    .hotel-booking p,
-    .additional-info p {
-      font-size: 0.9rem;
-    }
-
-    .booking-link {
-      display: block;
-      text-align: center;
-      padding: 0.6rem 1rem;
+    .taxi-name {
+      min-width: 130px;
     }
   }
 </style>
