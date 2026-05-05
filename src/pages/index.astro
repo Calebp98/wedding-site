@@ -228,6 +228,14 @@ import "../styles/global.css";
     </TimelineSection>
   </article>
 
+  <section class="moodboard-section" id="moodboard">
+    <h2 class="moodboard-title">Mood Board</h2>
+    <p class="moodboard-subtitle">Wear whatever you're comfortable in, but here's our colour scheme if you'd like some inspiration.</p>
+    <div class="moodboard-image-wrapper">
+      <img src="/wedmoodboard.jpeg" alt="Wedding mood board showing earthy tones, wildflowers, candlelight and the venue" class="moodboard-image" />
+    </div>
+  </section>
+
   <section class="tba-section" id="schedule">
     <h2 class="tba-section-title">Schedule</h2>
     <div class="tba-box">
@@ -267,6 +275,51 @@ import "../styles/global.css";
 </Layout>
 
 <style>
+  .moodboard-section {
+    max-width: 600px;
+    width: 88%;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 2rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .moodboard-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    color: #111;
+    letter-spacing: -0.02em;
+  }
+
+  .moodboard-subtitle {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 2rem 0;
+  }
+
+  .moodboard-image-wrapper {
+    border: 2px solid #111;
+  }
+
+  .moodboard-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .moodboard-section {
+      width: 100%;
+      padding: 4rem 1rem 2rem;
+    }
+
+    .moodboard-title {
+      font-size: 1.8rem;
+    }
+  }
+
   .tba-section {
     max-width: 700px;
     width: 88%;
