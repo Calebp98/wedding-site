@@ -5,13 +5,14 @@ import DaysCounter from "../components/DaysCounter.astro";
 import WeddingInfo from "../components/WeddingInfo.astro";
 import FAQ from "../components/FAQ.astro";
 import Transport from "../components/Transport.astro";
+import Accommodations from "../components/Accommodations.astro";
 import "../styles/global.css";
 ---
 
 <Layout title="Our Story">
   <div class="hero">
     <h1>Caleb & Grace</h1>
-    <p>We're getting married!!!</p>
+    <p>We're getting married!</p>
   </div>
 
   <div class="wedding-celebration">
@@ -19,7 +20,7 @@ import "../styles/global.css";
     <h2 class="celebration-title">Our Wedding Day</h2>
     <p>
       After many library dates, transatlantic flights, and (mis)adventures in
-      the peak district we're finally tying the knot.
+      the Peak District we're finally tying the knot.
     </p>
     <p>We're so excited to share this day with the people we love most.</p>
   </div>
@@ -37,13 +38,13 @@ import "../styles/global.css";
       title="Yes Please!"
     >
       <p>
-        In Caleb's last week living in the US we take a trip to Yosemite
+        In Caleb's last week living in the US, we took a trip to Yosemite
         (Grace's favourite place) with a few friends. Caleb proposed in Mariposa
         Grove of Giant Sequoias.
       </p>
       <p>
-        Grace says "yes please". Caleb moves back to the UK and we (after a few
-        months) start planning our wedding.
+        Grace said "yes please". Caleb moved back to the UK and we (after a few
+        months) started planning our wedding.
       </p>
     </TimelineSection>
 
@@ -54,8 +55,8 @@ import "../styles/global.css";
       title="Favourite Place on Earth"
     >
       <p>
-        We went to Yosemite National Park for the first time - spent time in
-        Yosemite Valley, saw the Dawn Wall at Dawn and went to Glacier Point.
+        We went to Yosemite National Park for the first time — spent time in
+        Yosemite Valley, saw the Dawn Wall at dawn and went to Glacier Point.
       </p>
       <p>Grace said it's her "favourite place on earth".</p>
     </TimelineSection>
@@ -66,7 +67,7 @@ import "../styles/global.css";
       displayDate="April 2024"
       title="Surprise Visit"
     >
-      <p>Grace flies to the US to surprise Caleb for his birthday.</p>
+      <p>Grace flew to the US to surprise Caleb for his birthday.</p>
     </TimelineSection>
 
     <TimelineSection
@@ -100,7 +101,7 @@ import "../styles/global.css";
       title="Long Distance Begins"
     >
       <p>
-        This is the start of 3 years of official long-distance with Caleb living
+        This was the start of three years of official long-distance with Caleb living
         in Berkeley, California and Grace living in Cambridge, UK.
       </p>
       <p>We found long-distance much easier than you might think.</p>
@@ -113,7 +114,7 @@ import "../styles/global.css";
       title="Caleb Starts a New Job"
     >
       <p>
-        Caleb starts a new job managing a philanthropic foundation travelling
+        Caleb started a new job managing a philanthropic foundation, travelling
         regularly to the US.
       </p>
     </TimelineSection>
@@ -125,8 +126,8 @@ import "../styles/global.css";
       title="Grace Graduates"
     >
       <p>
-        Grace graduates medical school and starts working in Cambridge as a
-        doctor. Caleb also moves to Cambridge.
+        Grace graduated from medical school and started working in Cambridge as a
+        doctor. Caleb also moved to Cambridge.
       </p>
     </TimelineSection>
 
@@ -138,7 +139,7 @@ import "../styles/global.css";
     >
       <p>
         At this point Caleb was living in a house a street away from Grace's so
-        we saw each other everyday but were socially distanced for lockdown.
+        we saw each other every day but were socially distanced for lockdown.
       </p>
     </TimelineSection>
 
@@ -227,11 +228,34 @@ import "../styles/global.css";
     </TimelineSection>
   </article>
 
+  <section class="tba-section" id="schedule">
+    <h2 class="tba-section-title">Schedule</h2>
+    <div class="tba-box">
+      <span class="tba-label">To Be Announced</span>
+      <p>The full day schedule will be shared closer to the date.</p>
+    </div>
+  </section>
+
+  <section class="tba-section" id="menu">
+    <h2 class="tba-section-title">Menu</h2>
+    <div class="tba-box">
+      <span class="tba-label">To Be Announced</span>
+      <p>Menu details will be shared once finalised with the venue.</p>
+    </div>
+  </section>
+
   <Transport />
 
-  <FAQ />
+  <section class="accom-section" id="accommodations">
+    <h2 class="accom-section-title">Accommodations</h2>
+    <Accommodations />
+  </section>
 
-  <div class="contact-section">
+  <div id="faq">
+    <FAQ />
+  </div>
+
+  <div class="contact-section" id="contact">
     <h2>Questions?</h2>
     <p>
       Feel free to reach out to Caleb, Grace, and Freya (our wedding planner).
@@ -243,6 +267,84 @@ import "../styles/global.css";
 </Layout>
 
 <style>
+  .tba-section {
+    max-width: 700px;
+    width: 88%;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .tba-section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
+    color: #111;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .tba-box {
+    border: 2px dashed #bbb;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .tba-label {
+    display: inline-block;
+    font-variant: small-caps;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+
+  .tba-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .tba-section {
+      width: 100%;
+      padding: 3rem 1rem 1.5rem;
+    }
+
+    .tba-section-title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .accom-section {
+    max-width: 87.5rem;
+    width: 88%;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+    box-sizing: border-box;
+  }
+
+  .accom-section-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+    color: #111;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 760px) {
+    .accom-section {
+      width: 100%;
+      padding: 4rem 1rem 3rem;
+    }
+
+    .accom-section-title {
+      font-size: 1.8rem;
+    }
+  }
+
   .contact-section {
     max-width: 800px;
     margin: 4rem auto;
@@ -250,7 +352,6 @@ import "../styles/global.css";
     text-align: center;
     border-top: 2px solid #111;
     border-bottom: 2px solid #111;
-    background-color: #fffff8;
   }
 
   .contact-section h2 {
@@ -276,15 +377,7 @@ import "../styles/global.css";
 
   .contact-details a {
     font-size: 1rem;
-    color: #111;
-    text-decoration: none;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 0.25rem;
-    transition: border-color 0.2s ease;
-  }
-
-  .contact-details a:hover {
-    border-bottom-color: #111;
   }
 
   @media (max-width: 768px) {
