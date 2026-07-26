@@ -1,0 +1,216 @@
+---
+// Gifts Component — registry, honeymoon fund, and charity
+---
+
+<div class="gifts-wrapper">
+  <p class="gifts-intro">
+    If you'd like to give something beyond your presence, we'd be grateful for
+    any of the following.
+  </p>
+
+  <div class="gifts-category">
+    <h3 class="gifts-cat-title">Registry</h3>
+    <div class="gifts-item">
+      <p>
+        We've put together a registry of things we'd love for our home together.
+      </p>
+      <a
+        class="gifts-button"
+        href="https://www.myregistry.com/wedding-registry/caleb-parikh-and-grace-braithwaite-witney-oxfordshite/5544640"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View our registry
+      </a>
+    </div>
+  </div>
+
+  <div class="gifts-category">
+    <h3 class="gifts-cat-title">Honeymoon Fund</h3>
+    <div class="gifts-item">
+      <p>
+        If you'd prefer to help us celebrate on our honeymoon, you can make a
+        contribution through either of the links below. We'll try to send you a
+        photo of the thing we spent it on.
+      </p>
+      <div class="gifts-button-row">
+        <a
+          class="gifts-button"
+          href="https://monzo.me/calebparikh?h=xoojOF&account_type=joint"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          UK &bull; Monzo
+        </a>
+        <a
+          class="gifts-button"
+          href="https://venmo.com/u/calebparikh"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          US &bull; Venmo @calebparikh
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gifts-category">
+    <h3 class="gifts-cat-title">Charity</h3>
+    <p class="gifts-item-lead">
+      Giving well is close to both our hearts. In lieu of a gift, you might
+      consider donating to one of two causes we've set up fundraisers for.
+    </p>
+
+    <div class="gifts-charity">
+      <h4>AI Safety Advocacy</h4>
+      <p>
+        The Midas Project and Legal Advocates for Safe Science and Technology
+        (LAAST) push for accountability from AI companies.
+      </p>
+      <a
+        class="gifts-button"
+        href="https://www.every.org/make-sure-ai-benefits"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Donate
+      </a>
+    </div>
+
+    <div class="gifts-charity">
+      <h4>Global Health &amp; Effective Giving</h4>
+      <p>
+        Giving What We Can and Ambitious Impact are building a culture of giving
+        to and founding high-impact charities, particulary for people in poverty
+        and factory farmed animals. Grace is a Giving What We Can pledger and
+        Caleb founded a charity through Ambitious Impact.
+      </p>
+      <a
+        class="gifts-button"
+        href="https://www.every.org/empower-radically-ambitious"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Donate
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .gifts-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .gifts-intro {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 2.5rem 0;
+    font-style: italic;
+    border-left: 3px solid #ddd;
+    padding-left: 1rem;
+  }
+
+  .gifts-category {
+    margin-bottom: 3rem;
+    border-left: 3px solid #111;
+    padding-left: 1.5rem;
+  }
+
+  .gifts-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .gifts-cat-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 0 1.25rem 0;
+    color: #111;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .gifts-item p {
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .gifts-item-lead {
+    margin: 0 0 1.75rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .gifts-charity {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .gifts-charity:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .gifts-charity h4 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+  }
+
+  .gifts-charity p {
+    margin: 0 0 1.25rem 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .gifts-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .gifts-button {
+    display: inline-block;
+    border: 2px solid #111;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    color: #111;
+    background-color: transparent;
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .gifts-button:hover {
+    background-color: #111;
+    border-color: #111;
+    color: #fffff8;
+  }
+
+  @media (max-width: 768px) {
+    .gifts-category {
+      padding-left: 1rem;
+    }
+
+    .gifts-button-row {
+      flex-direction: column;
+    }
+
+    .gifts-button {
+      text-align: center;
+    }
+  }
+</style>

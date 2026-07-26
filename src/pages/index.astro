@@ -6,6 +6,7 @@ import WeddingInfo from "../components/WeddingInfo.astro";
 import FAQ from "../components/FAQ.astro";
 import Transport from "../components/Transport.astro";
 import Accommodations from "../components/Accommodations.astro";
+import Gifts from "../components/Gifts.astro";
 import "../styles/global.css";
 ---
 
@@ -259,6 +260,11 @@ import "../styles/global.css";
     <Accommodations />
   </section>
 
+  <section class="gifts-section" id="gifts">
+    <h2 class="gifts-section-title">Gifts</h2>
+    <Gifts />
+  </section>
+
   <div id="faq">
     <FAQ />
   </div>
@@ -394,6 +400,34 @@ import "../styles/global.css";
     }
 
     .accom-section-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  .gifts-section {
+    max-width: 87.5rem;
+    width: 88%;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+    box-sizing: border-box;
+  }
+
+  .gifts-section-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+    color: #111;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 760px) {
+    .gifts-section {
+      width: 100%;
+      padding: 4rem 1rem 3rem;
+    }
+
+    .gifts-section-title {
       font-size: 1.8rem;
     }
   }
