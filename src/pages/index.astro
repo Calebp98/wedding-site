@@ -232,42 +232,130 @@ import "../styles/global.css";
     </TimelineSection>
   </article>
 
-  <section class="moodboard-section" id="moodboard">
-    <h2 class="moodboard-title">Mood Board</h2>
-    <p class="moodboard-subtitle">Wear whatever you're comfortable in, but here's our colour scheme if you'd like some inspiration.</p>
-    <div class="moodboard-image-wrapper">
-      <img src="/wedmoodboard.jpeg" alt="Wedding mood board showing earthy tones, wildflowers, candlelight and the venue" class="moodboard-image" />
+  <details class="archive" id="archive">
+    <summary class="archive-summary">
+      <span class="archive-title">Archive - Wedding Info</span>
+      <span class="archive-icon" aria-hidden="true">+</span>
+    </summary>
+    <section class="moodboard-section" id="moodboard">
+      <h2 class="moodboard-title">Mood Board</h2>
+      <p class="moodboard-subtitle">Wear whatever you're comfortable in, but here's our colour scheme if you'd like some inspiration.</p>
+      <div class="moodboard-image-wrapper">
+        <img src="/wedmoodboard.jpeg" alt="Wedding mood board showing earthy tones, wildflowers, candlelight and the venue" class="moodboard-image" />
+      </div>
+    </section>
+
+    <Transport />
+
+    <section class="accom-section" id="accommodations">
+      <h2 class="accom-section-title">Accommodations</h2>
+      <Accommodations />
+    </section>
+
+    <section class="gifts-section" id="gifts">
+      <h2 class="gifts-section-title">Gifts</h2>
+      <Gifts />
+    </section>
+
+    <div id="faq">
+      <FAQ />
     </div>
-  </section>
 
-  <Transport />
-
-  <section class="accom-section" id="accommodations">
-    <h2 class="accom-section-title">Accommodations</h2>
-    <Accommodations />
-  </section>
-
-  <section class="gifts-section" id="gifts">
-    <h2 class="gifts-section-title">Gifts</h2>
-    <Gifts />
-  </section>
-
-  <div id="faq">
-    <FAQ />
-  </div>
-
-  <div class="contact-section" id="contact">
-    <h2>Questions?</h2>
-    <p>
-      Feel free to reach out to Caleb, Grace, and Freya (our wedding planner).
-    </p>
-    <div class="contact-details">
-      <a href="mailto:calebgracewed26@gmail.com">calebgracewed26@gmail.com</a>
+    <div class="contact-section" id="contact">
+      <h2>Questions?</h2>
+      <p>
+        Feel free to reach out to Caleb, Grace, and Freya (our wedding planner).
+      </p>
+      <div class="contact-details">
+        <a href="mailto:calebgracewed26@gmail.com">calebgracewed26@gmail.com</a>
+      </div>
     </div>
-  </div>
+  </details>
+
+  <script>
+    // Open the archive when a menu link (or URL hash) points inside it
+    const archive = document.getElementById('archive') as HTMLDetailsElement | null;
+
+    function revealHash(hash: string) {
+      if (!archive || !hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (target && archive.contains(target) && target !== archive) {
+        archive.open = true;
+        requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth' }));
+      }
+    }
+
+    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => revealHash(link.getAttribute('href') || ''));
+    });
+    window.addEventListener('hashchange', () => revealHash(location.hash));
+    revealHash(location.hash);
+  </script>
 </Layout>
 
 <style>
+  .archive {
+    margin: 3rem 0 0;
+    padding-bottom: 8rem;
+  }
+
+  .archive-summary {
+    max-width: 700px;
+    width: 88%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .archive-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .archive-summary:hover .archive-title,
+  .archive-summary:hover .archive-icon {
+    color: #111;
+  }
+
+  .archive-title {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #777;
+    transition: color 0.2s ease;
+  }
+
+  .archive-icon {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: #777;
+    line-height: 1;
+    transition: transform 0.3s ease, color 0.2s ease;
+  }
+
+  .archive[open] .archive-icon {
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 768px) {
+    .archive {
+      margin-top: 2rem;
+      padding-bottom: 6rem;
+    }
+
+    .archive-summary {
+      width: calc(100% - 2rem);
+    }
+
+    .archive-title {
+      font-size: 1.1rem;
+    }
+  }
+
   .moodboard-section {
     max-width: 600px;
     width: 88%;
