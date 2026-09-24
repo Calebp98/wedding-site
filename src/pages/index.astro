@@ -34,7 +34,7 @@ import "../styles/global.css";
     <DaysCounter />
   </div>
 
-  <article>
+  <article id="timeline">
     <TimelineSection
       eventDate="2025-05-03"
       eventName="The Proposal"
@@ -279,7 +279,7 @@ import "../styles/global.css";
     function revealHash(hash: string) {
       if (!archive || !hash || hash === '#') return;
       const target = document.querySelector(hash);
-      if (target && archive.contains(target) && target !== archive) {
+      if (target && archive.contains(target)) {
         archive.open = true;
         requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth' }));
       }
