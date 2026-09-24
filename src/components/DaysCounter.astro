@@ -4,7 +4,7 @@
 
 <div class="days-counter">
   <span class="number" id="days-count">0</span>
-  <div class="label">Days Until</div>
+  <div class="label" id="days-direction">Days Until</div>
   <div class="label">The Wedding</div>
   <div class="sublabel" id="event-name"></div>
 </div>
@@ -16,6 +16,7 @@
   // Elements
   const daysCountElement = document.getElementById('days-count');
   const eventNameElement = document.getElementById('event-name');
+  const directionElement = document.getElementById('days-direction');
 
   // Track current value and animation state
   let currentValue = 0;
@@ -101,9 +102,14 @@
     }
   }
 
-  // Animate number counting
-  function animateNumber(end: number) {
+  // Animate number counting; negative values mean the wedding has passed
+  function animateNumber(days: number) {
     if (!daysCountElement) return;
+
+    if (directionElement) {
+      directionElement.textContent = days < 0 ? 'Days Since' : 'Days Until';
+    }
+    const end = Math.abs(days);
 
     // Cancel any running animation
     if (currentTimer) {
@@ -112,7 +118,7 @@
     }
 
     // Update target
-    targetValue = end;
+    targetValue = days;
 
     const duration = 600;
     const steps = 30;
